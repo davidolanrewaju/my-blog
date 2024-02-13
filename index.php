@@ -60,8 +60,10 @@
                     <div class="post-footer">
                         <img class="post-footer-img" src="css/assets/retrosupply.jpg" alt="profile-pic" width="30"
                             height="30">
-                        <p class="post-author">Maxzydsg Joe</p>
-                        <p class="post-date">01-01-2025</p>
+                        <div class="post-footer-content">
+                            <p class="post-author">Olanrewaju David</p>
+                            <p class="post-date">01-01-2025</p>
+                        </div>
                     </div>
                 </div>
                 <div class="post-container">
@@ -80,8 +82,10 @@
                     <div class="post-footer">
                         <img class="post-footer-img" src="css/assets/retrosupply.jpg" alt="profile-pic" width="30"
                             height="30">
-                        <p class="post-author">Maxzydsg Joe</p>
-                        <p class="post-date">01-01-2025</p>
+                        <div class="post-footer-content">
+                            <p class="post-author">Olanrewaju David</p>
+                            <p class="post-date">01-01-2025</p>
+                        </div>
                     </div>
                 </div>
                 <div class="post-container">
@@ -100,8 +104,10 @@
                     <div class="post-footer">
                         <img class="post-footer-img" src="css/assets/retrosupply.jpg" alt="profile-pic" width="30"
                             height="30">
-                        <p class="post-author">Maxzydsg Joe</p>
-                        <p class="post-date">01-01-2025</p>
+                        <div class="post-footer-content">
+                            <p class="post-author">Olanrewaju David</p>
+                            <p class="post-date">01-01-2025</p>
+                        </div>
                     </div>
                 </div>
                 <div class="post-container">
@@ -120,8 +126,10 @@
                     <div class="post-footer">
                         <img class="post-footer-img" src="css/assets/retrosupply.jpg" alt="profile-pic" width="30"
                             height="30">
-                        <p class="post-author">Maxzydsg Joe</p>
-                        <p class="post-date">01-01-2025</p>
+                        <div class="post-footer-content">
+                            <p class="post-author">Olanrewaju David</p>
+                            <p class="post-date">01-01-2025</p>
+                        </div>
                     </div>
                 </div>
                 <div class="post-container">
@@ -140,8 +148,10 @@
                     <div class="post-footer">
                         <img class="post-footer-img" src="css/assets/retrosupply.jpg" alt="profile-pic" width="30"
                             height="30">
-                        <p class="post-author">Maxzydsg Joe</p>
-                        <p class="post-date">01-01-2025</p>
+                        <div class="post-footer-content">
+                            <p class="post-author">Olanrewaju David</p>
+                            <p class="post-date">01-01-2025</p>
+                        </div>
                     </div>
                 </div>
             </div>
