@@ -92,7 +92,7 @@ if (isset($_POST['submit'])) {
         echo 'User Registered Successfully';
         $_SESSION['username'] = $username;
         $_SESSION['email'] = $email;
-        header("Location: admin/index.php");
+        header("Location: admin/");
         exit();
     }
 }
@@ -105,7 +105,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/signup.css" />
-    <title>Document</title>
+    <title>Sign Up</title>
 </head>
 
 <body>
@@ -124,7 +124,7 @@ if (isset($_POST['submit'])) {
                 </p>
             </div>
             <div class="signin">
-                <p>Already have an account?<a href="#">Log In</a></p>
+                <p>Already have an account?<a href="login.php">Log In</a></p>
             </div>
             <form class="signup-form" action="signup.php" method="post">
                 <div class="input-section">
