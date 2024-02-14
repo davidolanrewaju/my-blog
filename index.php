@@ -23,7 +23,7 @@
             </ul>
         </div>
         <div class="authorization-links">
-            <button type="button" class="login-btn btn">Log In</button>
+            <button type="button" class="login-btn btn"><a href="login.php">Log In</a></button>
             <button type="button" class="signup-btn btn"><a href="signup.php">Create an Account</a></button>
         </div>
     </nav>

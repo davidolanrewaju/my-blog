@@ -63,7 +63,7 @@ body {
   gap: 1rem;
 }
 
-.btn {
+ .btn {
   border: 0;
   border-radius: 20px;
   padding: 0.5rem 1.5rem;
@@ -76,11 +76,19 @@ body {
 .login-btn {
   background-color: transparent;
   border: 1px solid #a6e2c680;
+}
+
+.login-btn a {
+  text-decoration: none;
   color: #a6e2c680;
 }
 
 .login-btn:hover {
   background-color: #a6e2c6;
+  color: white;
+}
+
+.login-btn a:hover {
   color: white;
 }
 
