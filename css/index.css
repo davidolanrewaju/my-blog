@@ -89,6 +89,11 @@ body {
   color: #fff;
 }
 
+.signup-btn a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .signup-btn:hover {
   background-color: #a6e2c6;
 }

@@ -1,3 +1,11 @@
+<?php 
+session_start();
+
+if(isset($_SESSION['username']) && isset($_SESSION['email'])) {
+    $user = $_SESSION['username'];
+    $user_email = $_SESSION['email'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +14,6 @@
     <title>My Blog - Admin</title>
 </head>
 <body>
-    
+    <h1>Welcome <?php echo $user ?></h1>
 </body>
 </html>

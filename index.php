@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
         </div>
         <div class="authorization-links">
             <button type="button" class="login-btn btn">Log In</button>
-            <button type="button" class="signup-btn btn">Create an Account</button>
+            <button type="button" class="signup-btn btn"><a href="signup.php">Create an Account</a></button>
         </div>
     </nav>
 
