@@ -114,11 +114,11 @@ if (isset($_POST['submit'])) {
             </form>
             <div class="third-party-login">
                 <div class="google-container">
-                    <img class="google-logo" src="css/assets/google.svg" alt="google" />
+                    <img class="google-logo" src="css/assets/google.svg" alt="google"  width="40" height="40"/>
                     <p>SignUp using Google</p>
                 </div>
                 <div class="facebook-container">
-                    <img class="facebook-logo" src="css/assets/facebook.svg" alt="facebook" />
+                    <img class="facebook-logo" src="css/assets/facebook.svg" alt="facebook"  width="40" height="40"/>
                     <p>SignUp using Facebook</p>
                 </div>
             </div>

@@ -131,7 +131,7 @@ input {
 }
 
 .third-party-login {
-  margin-top: -0.5rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -144,22 +144,16 @@ input {
   width: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1rem;
   background-color: #77bb9b;
   border-radius: 5px;
-  padding: 0.5rem;
+  padding: 0.5rem 1.5rem;
 }
 
 .google-container:hover,
 .facebook-container:hover {
   background-color: #3e6854;
   cursor: pointer;
-}
-
-.google-logo,
-.facebook-logo {
-  width: 15%;
 }
 
 .google-container p,
