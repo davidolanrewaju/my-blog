@@ -14,6 +14,12 @@ if(isset($_SESSION['username']) && isset($_SESSION['email'])) {
     <title>My Blog - Admin</title>
 </head>
 <body>
+    <div class="main-container">
+        <div class="side-nav">
+            
+        </div>
+        <div class="main-content"></div>
+    </div>
     <h1>Welcome <?php echo $user ?></h1>
 </body>
 </html>
