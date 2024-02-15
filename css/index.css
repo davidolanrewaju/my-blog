@@ -71,15 +71,12 @@ body {
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .login-btn {
   background-color: transparent;
   border: 1px solid #a6e2c680;
-}
-
-.login-btn a {
-  text-decoration: none;
   color: #a6e2c680;
 }
 
@@ -88,17 +85,8 @@ body {
   color: white;
 }
 
-.login-btn a:hover {
-  color: white;
-}
-
 .signup-btn {
   background-color: #a6e2c680;
-  color: #fff;
-}
-
-.signup-btn a {
-  text-decoration: none;
   color: #fff;
 }
 
