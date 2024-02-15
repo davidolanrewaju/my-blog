@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+:root {
+  --playfair: "Playfair Display", serif;
+  --zilla: "Zilla Slab", serif;
+  --outfit: "Outfit", sans-serif;
+  --ibm: "IBM Plex Sans", sans-serif;
+}
+*,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: var(--outfit);
+  max-height: 100vh;
+  background-color: #fff;
+}
+
+.main-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.logo-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(
+      to right,
+      rgba(119, 187, 155, 0.8),
+      rgba(119, 187, 155, 0.8)
+    ),
+    url("assets/thought-catalog.jpg");
+}
+
+.logo {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.logo h2 {
+  color: #fff;
+  font-size: 6rem;
+}
+
+.login-container {
+  padding: 2rem 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-height: 100vh;
+}
+
+.welcome-msg {
+  margin-bottom: 0.2rem;
+  font-size: 32px;
+  color: #77bb9b;
+}
+
+.login-header p {
+  font-weight: 300;
+}
+
+.signup {
+    margin-bottom: 1.5rem;
+}
+
+.signup p a {
+  text-decoration: none;
+  color: #77bb9b;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+.signup p a:hover {
+  text-decoration: underline;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+label {
+  color: #77bb9b;
+  font-weight: 600;
+}
+
+input {
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  padding: 0.7rem 0.3rem;
+  background-color: #e0e0e0;
+  font-family: var(--outfit);
+  font-size: 16px;
+}
+
+.error-msg {
+  color: #ff6767;
+  font-size: 14px;
+}
+
+.login-btn {
+  width: 100%;
+  background-color: #77bb9b;
+  color: white;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.login-btn:hover {
+  cursor: pointer;
+  background-color: #3e6854;
+}
+
+.third-party-login {
+  margin-top: -0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.google-container,
+.facebook-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #77bb9b;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.google-container:hover,
+.facebook-container:hover {
+  background-color: #3e6854;
+  cursor: pointer;
+}
+
+.google-logo,
+.facebook-logo {
+  width: 15%;
+}
+
+.google-container p,
+.facebook-container p {
+  color: #fff;
+}
