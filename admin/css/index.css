@@ -20,16 +20,21 @@ body {
   font-family: var(--outfit);
 }
 
-.main-container {
-  height: 100%;
+/* .main-container {
   display: grid;
   grid-template-columns: 15% 85%;
-}
+} */
 
 .side-nav {
-  height: 100vh;
+  height: 100%;
+  position: fixed;
+  width: 18%;
   background-color: #494949;
   color: #fff;
+}
+
+.main-content {
+  margin-left: 18%;
 }
 
 .logo {
@@ -179,10 +184,10 @@ body {
 }
 
 .info-cards {
-  padding: 4rem 2rem 2rem 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 4%;
+  padding: 4rem 2rem 2rem 2rem;
 }
 
 .card {
