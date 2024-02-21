@@ -43,7 +43,7 @@ $errors = array();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $post_title = sanitize($_POST['post-title']);
     $post_status = sanitize($_POST['post-status']);
-    $post_content = sanitize($_POST['post-content']);
+    $post_content = ($_POST['post-content']);
     $post_category_id = $_POST['post-category-id'];
     $post_date = date('d-m-Y');
     $post_user_id = $user_id;
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $post_stmt = $db->prepare($post_query);
 
-    $post_stmt->bind_param('ssssssss', $post_user_id, $post_category_id, $post_title, $post_content, $post_image_name, $post_date, $post_comments_count, $post_status);
+    $post_stmt->bind_param('iissssis', $post_user_id, $post_category_id, $post_title, $post_content, $post_image_name, $post_date, $post_comments_count, $post_status);
 
     $post_stmt->execute();
 
