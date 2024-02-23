@@ -1,18 +1,246 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+:root {
+  --playfair: "Playfair Display", serif;
+  --zilla: "Zilla Slab", serif;
+  --outfit: "Outfit", sans-serif;
+  --ibm: "IBM Plex Sans", sans-serif;
+}
 
 *,
 html {
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
   box-sizing: border-box;
 }
 
 body {
   line-height: 1;
+  font-family: var(--outfit);
+}
+
+/* .main-container {
+  display: grid;
+  grid-template-columns: 15% 85%;
+} */
+
+.side-nav {
+  height: 100%;
+  position: fixed;
+  width: 18%;
+  background-color: #494949;
+  color: #fff;
+}
+
+.main-content {
+  margin-left: 18%;
+}
+
+.logo {
+  padding: 1.5rem;
+  color: #77bb9b;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+  height: 15%;
+}
+
+.logo p {
+  margin-top: 5px;
+  color: #c5c5c5;
+}
+
+.tabs {
+  margin-top: 3rem;
+  padding-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tab {
+  margin: 5px 0px 5px 5px;
+  padding: 1rem;
+  border-radius: 25px 0 0 25px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.tab:hover {
+  background-color: #c5c5c5;
+}
+
+/* Added class in js for change background color of active link */
+.active {
+  /* background-color: #c5c5c5; */
+  background-image: linear-gradient(
+      to right,
+      rgba(197, 197, 197, 1.0),
+      rgb(148, 148, 148)
+    );
+}
+
+.logout-container {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 1rem;
+  margin: 25px;
+  position: fixed;
+  bottom: 0;
+  background-color: #5f5f5f;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.logout-container:hover {
+  background-color: #9c9c9c;
+}
+
+.logout-icon {
+  width: 25%;
+}
+
+.top-nav {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  height: 15%;
+  background-color: #e6e6e6;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+.profile {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.profile-img img{
+  border-radius: 50%;
+  border: 2px solid #77bb9b;
+  padding: 3px;
+}
+
+.welcome-msg h2{
+  color: #77bb9b;
+  padding-bottom: 4px;
+  font-size: 28px;
+}
+
+.welcome-msg p {
+  font-size: 20px;
+  color: #5f5f5f;
+}
+
+.search-container {
+  display: grid;
+  grid-template-columns: 65% 30%;
+  column-gap: 5%;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 0 1rem 0 1rem;
+  border: 2px solid #77bb9b;
+  border-radius: 20px;
+}
+
+#search {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0.6rem 0;
+}
+
+.search-icon {
+  width: 6%;
+}
+
+.goto-website {
+  place-self: center;
+}
+
+.goto-website a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  background-color: #77bb9b;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.goto-website a:hover {
+  text-decoration: underline;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4%;
+  padding: 4rem 2rem 2rem 2rem;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #77bb9b;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.card:hover {
+  background-color: #446b58;
+}
+
+.card-img {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.info p {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.info h1 {
+  font-size: 46px;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.info a {
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #77bb9b;
+  border-radius: 5px;
+  border: 2px solid transparent;
+}
+
+.info a:hover {
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
 }

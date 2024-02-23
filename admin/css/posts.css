@@ -1,0 +1,23 @@
+.posts-container {
+  margin-bottom: 1.5rem;
+  background-color: #b0ccbd;
+}
+
+.posts-nav {
+  display: flex;
+  align-items: center;
+}
+
+.post-sub-link {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 2rem 2rem 0.5rem 2rem;
+  border-bottom: 3px solid transparent;
+  color: #446b58;
+}
+
+.active-sublink {
+  padding: 2rem 2rem 0.5rem 2rem;
+  border-bottom: 3px solid #446b58;
+}

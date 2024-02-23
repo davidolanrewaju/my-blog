@@ -1,25 +1,40 @@
-<?php 
-session_start();
+<?php include './reusableComponents/session.php'; ?>
+<?php include './reusableComponents/header.php'; ?>
+        <div class="info-cards">
+            <div class="posts-card card">
+                <div class="card-img">
+                    <img src="css/assets/posts.svg" alt="post-icon" width="100" height="100">
+                </div>
+                <div class="posts-info info">
+                    <p>Posts</p>
+                    <h1>12</h1>
+                    <a href="#">View Details</a>
+                </div>
+            </div>
+            <div class="categories-card card">
+                <div class="card-img">
+                    <img src="css/assets/category.svg" alt="post-icon" width="100" height="100">
 
-if(isset($_SESSION['username']) && isset($_SESSION['email'])) {
-    $user = $_SESSION['username'];
-    $user_email = $_SESSION['email'];
-}
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog - Admin</title>
-</head>
-<body>
-    <div class="main-container">
-        <div class="side-nav">
-            
+                </div>
+                <div class="categories-info info">
+                    <p>Categories</p>
+                    <h1>6</h1>
+                    <a href="#">View Details</a>
+                </div>
+            </div>
+            <div class="comments-card card">
+                <div class="card-img">
+                    <img src="css/assets/comment.svg" alt="post-icon" width="100" height="100">
+
+                </div>
+                <div class="comments-info info">
+                    <p>Comments</p>
+                    <h1>20</h1>
+                    <a href="#">View Details</a>
+                </div>
+            </div>
         </div>
-        <div class="main-content"></div>
     </div>
-    <h1>Welcome <?php echo $user ?></h1>
-</body>
-</html>
+</div>
+
+<?php include './reusableComponents/footer.php'; ?>
