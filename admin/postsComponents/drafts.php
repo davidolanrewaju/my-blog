@@ -22,7 +22,6 @@ if (isset($user)) {
     $getPosts_stmt->execute();
     $postsResult = $getPosts_stmt->get_result();
 }
-
 ?>
 
 <div class="posts-container">
@@ -96,11 +95,12 @@ if (isset($user)) {
                         </a>
                     </td>
                     <td class="icon-link">
-                        <a href="#">
+                        <a href="?type=delete&p_id=<?php echo $post_id; ?>" onclick="openDeleteModal(event)">
                             <img class="delete-icon" src="../admin/css/assets/delete.svg" alt="" width="23" height="23">
                         </a>
                     </td>
                 </tr>
+                <?php include(__DIR__ . '/../../admin/reusableComponents/delete-modal.php'); ?>
             <?php } ?>
         </tbody>
     </table>
