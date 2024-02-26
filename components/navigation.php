@@ -15,11 +15,11 @@
         </div>
         <div class="link-container">
             <ul class="links">
-                <li class="link"><a href="#">Home</a></li>
-                <li class="link"><a href="#">CyberSecurity</a></li>
-                <li class="link"><a href="#">Web Development</a></li>
-                <li class="link"><a href="#">Data Science</a></li>
-                <li class="link"><a href="#">Product Design</a></li>
+                <li><a class="link" href="./">Home</a></li>
+                <li><a class="link" href="./cybersec.php">CyberSecurity</a></li>
+                <li><a class="link" href="./webdevelopment.php">Web Development</a></li>
+                <li><a class="link" href="./datascience.php">Data Science</a></li>
+                <li><a class="link" href="./productdesign.php">Product Design</a></li>
             </ul>
         </div>
         <div class="authorization-links">
