@@ -8,6 +8,7 @@ $post_image = '';
 $post_comments = '';
 $post_date = '';
 $post_author = '';
+$post_id = '';
 
 $category_title = 'Cybersecurity';
 

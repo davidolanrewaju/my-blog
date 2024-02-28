@@ -22,12 +22,13 @@
                 $post_image = $row['post_image'];
                 $post_author = $row['user_name'];
                 $post_date = $row['post_date'];
+                $post_id = $row['id'];
                 ?>
                 <div class="post-container">
                     <?php echo "<img class='post-image' src='./admin/postImages/$post_image' alt='post-image'>"; ?>
-                    <h3 class="post-title">
+                    <a href="./postview.php?id=<?php echo $post_id ?>" class="post-title">
                         <?php echo $post_title; ?>
-                    </h3>
+                    </a>
                     <p class="post-content">
                         <?php echo $post_content; ?>
                     </p>

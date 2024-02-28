@@ -8,6 +8,7 @@ $post_image = '';
 $post_comments = '';
 $post_date = '';
 $post_author = '';
+$post_id = '';
 
 $getPosts_query = "SELECT posts.*, users.username AS user_name, category.category_title
     FROM posts
