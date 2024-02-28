@@ -43,19 +43,31 @@ body {
   gap: 1.2rem;
 }
 
-.link {
+.links li {
   list-style-type: none;
 }
 
-.link a {
+.link {
   color: #fff;
   text-decoration: none;
   font-family: var(--outfit);
 }
 
-.link a:hover {
+.link:hover {
   border-bottom: 1px solid white;
-  padding-bottom: 3px;
+  padding-bottom: 0.5rem;
+}
+
+.active-home {
+  background-color: #fff;
+  color: #446b58;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+}
+
+.active-home:hover {
+  border: none;
+  padding-bottom: 0.5rem;
 }
 
 .authorization-links {
@@ -63,7 +75,7 @@ body {
   gap: 1rem;
 }
 
- .btn {
+.btn {
   border: 0;
   border-radius: 20px;
   padding: 0.5rem 1.5rem;
@@ -168,13 +180,28 @@ body {
   margin-bottom: 2rem;
 }
 
-.post-image {
+.post-container .post-image {
   width: 100%;
-  border-radius: 7px;
+  border-radius: 15px;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.post-container:hover .post-image {
+  filter: brightness(50%);
 }
 
 .post-title {
   margin-top: 1rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+  color: #0b1215;
+}
+
+.post-title:hover {
+  border-bottom: 1px solid #0b1215;
 }
 
 .post-content {
@@ -182,8 +209,9 @@ body {
   text-overflow: ellipsis;
   text-wrap: pre-wrap;
   max-height: 4rem;
-  font-weight: 200;
+  font-weight: 300;
   margin-top: 0.5rem;
+  color: #101720;
 }
 
 .post-footer {
@@ -278,4 +306,78 @@ body {
   max-height: 4em;
   font-weight: 200;
   font-size: 13px;
+}
+
+/* PostView CSS */
+.view-header {
+  align-self: end;
+  padding: 0 1.5rem;
+}
+.view-post-title {
+  font-size: 32px;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.post-sub-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.view-body p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.comment-section {
+  margin-top: 2rem;
+  background-color: #6eaa8d;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+}
+
+.comment-view {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 15px 0 5px 0;
+  color: #fff;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  outline: none;
+  padding: 0.7rem 0 0.7rem 0.5rem;
+  border: none;
+  border-radius: 10px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: var(--outfit);
+}
+
+.comment-btn {
+  margin: 1.5rem 0 0.5rem 0;
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+}
+
+.comment-btn:hover {
+  background-color: #fff;
+  color: #5c9479;
+}
+
+.error-msg {
+  color: rgb(141, 17, 17);
+  font-weight: 600;
 }
