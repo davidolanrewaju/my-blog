@@ -21,8 +21,7 @@ $types = array('view', 'edit', 'drafts', 'published');
         echo "<a class='tab $isActive' href='$link'>Posts</a>";
         ?>
         <a class="tab" href="add-posts.php">Add Posts</a>
-        <a class="tab" href="comments.php">Comments</a>
-        <a class="tab" href="categories.php">Categories</a>
+        <a class="tab" href="comments.php" data-id="p_id">Comments</a>
         <a class="tab" href="profile.php">Your Profile</a>
     </div>
     <!-- Return user to blog website on logout -->

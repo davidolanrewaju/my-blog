@@ -230,17 +230,17 @@ body {
   color: #fff;
 }
 
-.info a {
-  background-color: #fff;
+.info a{
+  color: #fff;
+  background-color: transparent;
   padding: 0.5rem 1rem;
-  text-decoration: none;
-  color: #77bb9b;
+  border: 2px solid #fff;
   border-radius: 5px;
-  border: 2px solid transparent;
 }
 
 .info a:hover {
-  color: #fff;
-  background-color: transparent;
-  border: 2px solid #fff;
+  background-color: #fff;
+  text-decoration: none;
+  color: #446b58;
+  border: 2px solid transparent;
 }
