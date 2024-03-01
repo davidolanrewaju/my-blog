@@ -4,17 +4,32 @@
 <?php
 include("../db/db.php");
 
-if (isset($user)) {
-    $getPosts_query = "SELECT posts.*, users.username AS user_name, category.category_title
-    FROM posts
-    LEFT JOIN users ON posts.user_id = users.id
-    LEFT JOIN category ON posts.category_id = category.id
-    WHERE users.username=?";
+$user_id = "";
 
-    $getPosts_stmt = $db->prepare($getPosts_query);
-    $getPosts_stmt->bind_param("s", $user);
-    $getPosts_stmt->execute();
-    $postsResult = $getPosts_stmt->get_result();
+//$user was gotten from session.php to get the user's name
+if (isset($user)) {
+    $getUsers_query = "SELECT id FROM users WHERE username=?";
+
+    $getUsers_stmt = $db->prepare($getUsers_query);
+    $getUsers_stmt->bind_param("s", $user);
+    $getUsers_stmt->execute();
+    $usersResult = $getUsers_stmt->get_result();
+    
+    while($userRow = mysqli_fetch_assoc($usersResult)) {
+        $user_id = $userRow["id"];
+    }
+
+
+    $getComments_query = "SELECT comments.*, posts.post_title, users.username
+                     FROM comments
+                     LEFT JOIN posts ON comments.post_id = posts.id
+                     LEFT JOIN users ON comments.user_id = users.id
+                     WHERE posts.user_id = ?";
+
+    $getComments_stmt = $db->prepare($getComments_query);
+    $getComments_stmt->bind_param("i", $user_id);  // Assuming $user_id is the user's ID
+    $getComments_stmt->execute();
+    $commentsResult = $getComments_stmt->get_result();
 }
 
 ?>
@@ -35,51 +50,19 @@ if (isset($user)) {
         </thead>
         <tbody>
             <?php
-            while ($row = mysqli_fetch_assoc($postsResult)) {
-                $post_id = $row['id'];
-                $getComments_query = "SELECT * FROM comments WHERE post_id = ?";
-
-                $getComments_stmt = $db->prepare($getComments_query);
-                $getComments_stmt->bind_param("i", $post_id);
-                $getComments_stmt->execute();
-                $commentsResult = $getComments_stmt->get_result();
-
-                while ($row = mysqli_fetch_assoc($commentsResult)) {
-                    $comment_id = $row['id'];
-                    $postId = $row['post_id'];
-                    $comment_content = $row['comment_content'];
-                    $userId = $row['user_id'];
-                    $comment_date = $row['comment_date'];
-                    $username = "";
-                    $post_title = "";
-
-
-                    //Get users using user_id in comments table from users table
-                    $getUsername_query = "SELECT username FROM users WHERE id = ?";
-
-                    $getUsername_stmt = $db->prepare($getUsername_query);
-                    $getUsername_stmt->bind_param("i", $userId);
-                    $getUsername_stmt->execute();
-                    $usernameResult = $getUsername_stmt->get_result();
-                    while ($userRow = mysqli_fetch_assoc($usernameResult)) {
-                        $username .= $userRow["username"];
-                    }
-
-                    //Get post title using post_id in comments table from posts table
-                    $getPostTitle_query = "SELECT post_title FROM posts WHERE id = ?";
-
-                    $getPostTitle_stmt = $db->prepare($getPostTitle_query);
-                    $getPostTitle_stmt->bind_param("i", $postId);
-                    $getPostTitle_stmt->execute();
-                    $postTitleResult = $getPostTitle_stmt->get_result();
-                    while ($postTitleRow = mysqli_fetch_assoc($postTitleResult)) {
-                        $post_title .= $postTitleRow["post_title"];
-                    }
-                }
+            $commentCounter = 1;
+            while ($row = mysqli_fetch_assoc($commentsResult)) {
+                $comment_id = $row['id'];
+                // $postId = $row['post_id'];
+                $comment_content = $row['comment_content'];
+                // $userId = $row['user_id'];
+                $comment_date = $row['comment_date'];
+                $username = $row["username"];
+                $post_title = $row["post_title"];
                 ?>
                 <tr>
                     <td class="comment_id">
-                        <?php echo $comment_id; ?>
+                        <?php echo $commentCounter; ?>
                     </td>
                     <td class="post_title">
                         <?php echo $post_title; ?>
@@ -96,7 +79,7 @@ if (isset($user)) {
                         <?php echo $comment_date; ?>
                     </td>
                 </tr>
-            <?php } ?>
+            <?php   $commentCounter++; } ?>
         </tbody>
     </table>
 </div>
