@@ -56,26 +56,15 @@ if (isset($_POST['update'])) {
     $post_status = sanitize($_POST['post-status']);
     $post_content = ($_POST['post-content']);
     $post_category_id = $_POST['post-category-id'];
+    $current_date = date('d-m-Y');
 
     $post_image_name = $_FILES['post-image']['name'];
     $post_image_tmp = $_FILES['post-image']['tmp_name'];
     $post_image_path = '../admin/postImages/' . $post_image_name;
 
-    //Checks if the file doesn't exists in the directory to prevent duplicates
-    if (file_exists($post_image_path)) {
-        echo "File already exists.";
-    } else {
-        // Move the uploaded file to the destination directory
-        if (move_uploaded_file($post_image_tmp, $post_image_path)) {
-            exit();
-        } else {
-            echo "Error moving file.";
-        }
-    }
-
-    $update_query = 'UPDATE posts SET category_id=?, post_title=?, post_content=?, post_image=?, post_status=? WHERE id=?';
+    $update_query = 'UPDATE posts SET category_id=?, post_title=?, post_content=?, post_image=?, post_status=?, post_date=? WHERE id=?';
     $update_stmt = $db->prepare($update_query);
-    $update_stmt->bind_param('issssi', $post_category_id, $post_title, $post_content, $post_image_name, $post_status, $post_id);
+    $update_stmt->bind_param('isssssi', $post_category_id, $post_title, $post_content, $post_image_name, $post_status, $current_date, $post_id);
     $update_stmt->execute();
 
     if (!$update_stmt->errno) {
