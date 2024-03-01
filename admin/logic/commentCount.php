@@ -24,7 +24,10 @@ $totalComments = "";
 
 $getTotalComments_query = "SELECT COUNT(comments.id) AS total_posts
     FROM comments
-    WHERE comments.user_id = ?";
+    LEFT JOIN posts ON comments.post_id = posts.id
+    LEFT JOIN users ON comments.user_id = users.id
+    WHERE posts.user_id = ?";
+
 $getTotalComments_stmt = $db->prepare($getTotalComments_query);
 $getTotalComments_stmt->bind_param("i", $user_id);
 $getTotalComments_stmt->execute();
@@ -37,3 +40,16 @@ if ($totalCommentsResult->num_rows > 0) {
     $totalComments = "No posts found for this user.";
 }
 $getTotalComments_stmt->close();
+
+
+
+//Update posts table to handle comments count
+$updateCommentCount = 'UPDATE posts SET post_comments_count = (
+    SELECT COUNT(comments.id) 
+    FROM comments 
+    WHERE comments.post_id = posts.id
+    )';
+
+$updateCommentCount_stmt = $db->prepare($updateCommentCount);
+$updateCommentCount_stmt->execute();
+$updateCommentCount_stmt->close();
