@@ -47,7 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $post_category_id = $_POST['post-category-id'];
     $post_date = date('d-m-Y');
     $post_user_id = $user_id;
-    $post_comments_count = 5;
 
     $post_image_name = $_FILES['post-image']['name'];
     $post_image_tmp = $_FILES['post-image']['tmp_name'];
