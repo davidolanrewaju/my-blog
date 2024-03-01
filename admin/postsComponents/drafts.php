@@ -49,6 +49,7 @@ if (isset($user)) {
         </thead>
         <tbody>
             <?php
+            $commentCounter = 1;
             while ($row = mysqli_fetch_assoc($postsResult)) {
                 $post_id = $row['id'];
                 $post_title = $row['post_title'];
@@ -60,7 +61,7 @@ if (isset($user)) {
                 ?>
                 <tr>
                     <td class="post_id">
-                        <?php echo $post_id; ?>
+                        <?php echo $commentCounter; ?>
                     </td>
                     <td class="post_title">
                         <?php echo $post_title; ?>
@@ -101,7 +102,7 @@ if (isset($user)) {
                     </td>
                 </tr>
                 <?php include(__DIR__ . '/../../admin/reusableComponents/delete-modal.php'); ?>
-            <?php } ?>
+            <?php $commentCounter++; } ?>
         </tbody>
     </table>
 </div>
